@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dataset Visualization</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container my-5">
+		<h1 class="text-center">Features vs. Heart Disease</h1>
+		<form method="post" class="row">
+			<div class="col-md-4">
+				<label for="gender" class="form-label">Gender</label>
+				<select name="gender" id="gender" class="form-select">
+					<option value="-1">All</option>
+					<option value="0">Female</option>
+					<option value="1">Male</option>
+				</select>
+			</div>
+
+			<div class="col-md-4">
+				<label for="age_min" class="form-label">Minimum Age</label>
+				<input type="number" name="age_min" id="age_min" class="form-control" min="0" max="120" value="0">
+			</div>
+			<div class="col-md-4">
+				<label for="age_max" class="form-label">Maximum Age</label>
+				<input type="number" name="age_max" id="age_max" class="form-control" min="0" max="120" value="120">
+			</div>
+
+			<div class="col-12">
+				<button type="submit" class="btn btn-primary">Apply Filters</button>
+			</div>
+		</form>
+		
+		<div class="row">
+			{% for plot in plots %}
+			<div class="col-md-6 mb-4">
+				<img src="{{ plot }}" class="img-fluid border" alt="Graph">
+			</div>
+			{% endfor %}
+		</div>
+		<div class="text-center mt-4">
+			<a href="{{ url_for('home') }}" class="btn btn-secondary">Back to Home</a>
+		</div>
+	</div>
+</body>
+</html>

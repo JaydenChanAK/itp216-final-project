@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Make Prediction</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container my-5">
+		<h1 class="text-center">Heart Disease Prediction</h1>
+		<form method="post" class="mx-auto" style="max-width: 400px;">
+			
+			<div class="mb-3">
+				<label for="age" class="form-label">Age:</label>
+				<input type="number" name="age" id="age" 
+				class="form-control" min="0" max="120" placeholder=0 required>
+			</div>
+
+			<div class="mb-3">
+				<label for="sex" class="form-label">Sex:</label>
+				<select name="sex" id="sex" class="form-select">
+					<option value="1">Male</option>
+					<option value="0">Female</option>
+				</select>
+			</div>
+
+			<div class="mb-3">
+				<label for="chest_pain_type" class="form-label">Chest Pain Type:</label>
+				<select name="chest_pain_type" id="chest_pain_type" class="form-select">
+					<option value="1">Typical Angina</option>
+					<option value="2">Atypical Angina</option>
+					<option value="3">Non-anginal Pain</option>
+					<option value="4">Asymptomatic</option>
+				</select>
+			</div>
+
+			<div class="mb-3">
+				<label for="resting_bp" class="form-label">Resting Blood Pressure:</label>
+				<input type="number" name="resting_bp_s" id="resting_bp_s" class="form-control" min="0" max="300" placeholder=0 required>
+			</div>
+
+			<div class="mb-3">
+				<label for="cholesterol" class="form-label">Cholesterol:</label>
+				<input type="number" name="cholesterol" id="cholesterol" class="form-control" min="0" max="600" placeholder=0 required>
+			</div>
+
+			<div class="mb-3">
+				<label for="fasting_blood_sugar" class="form-label">Fasting Blood Sugar:</label>
+				<select name="fasting_blood_sugar" id="fasting_blood_sugar" class="form-select">
+					<option value="1">True</option>
+					<option value="0">False</option>
+				</select>
+			</div>
+
+			<div class="mb-3">
+				<label for="resting_ecg" class="form-label">Resting ECG Results:</label>
+				<select name="resting_ecg" id="resting_ecg" class="form-select">
+					<option value="0">Normal</option>
+					<option value="1">ST-T Wave Abnormality</option>
+					<option value="2">Left Ventricular Hypertrophy</option>
+				</select>
+			</div>
+
+			<div class="mb-3">
+				<label for="max_heart_rate" class="form-label">Max Heart Rate:</label>
+				<input type="number" name="max_heart_rate" id="max_heart_rate" class="form-control" min="0" max="300" placeholder=0 required>
+			</div>
+
+			<div class="mb-3">
+				<label for="exercise_angina" class="form-label">Exercise Induced Angina:</label>
+				<select name="exercise_angina" id="exercise_angina" class="form-select">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</select>
+			</div>
+
+			<div class="mb-3">
+				<label for="oldpeak" class="form-label">Oldpeak:</label>
+				<input type="number" name="oldpeak" id="oldpeak" class="form-control" min="0" max="6" placeholder=0 step="0.1" required>
+			</div>
+
+			<div class="mb-3">
+				<label for="st_slope" class="form-label">ST Slope:</label>
+				<select name="ST_slope" id="ST_slope" class="form-select">
+					<option value="1">Upsloping</option>
+					<option value="2">Flat</option>
+					<option value="3">Downsloping</option>
+				</select>
+			</div>
+
+			<button type="submit" class="btn btn-success">Predict</button>
+		</form>
+		<div class="text-center mt-4">
+			<a href="{{ url_for('home') }}" class="btn btn-secondary">Back to Home</a>
+		</div>
+	</div>
+</body>
+</html>
